@@ -1,0 +1,245 @@
+.plant-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.plant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.plant-card.out-of-stock {
+  opacity: 0.7;
+}
+
+.plant-card.out-of-stock:hover {
+  transform: none;
+}
+
+/* Plant image */
+.plant-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.plant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover .plant-image img {
+  transform: scale(1.05);
+}
+
+.out-of-stock-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #dc2626;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Plant info */
+.plant-info {
+  padding: 1.5rem;
+}
+
+.plant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.plant-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.plant-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10b981;
+  white-space: nowrap;
+}
+
+.plant-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Categories */
+.plant-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-tag {
+  background: #f0f9ff;
+  color: #0369a1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #bae6fd;
+}
+
+/* Care information */
+.plant-care-info {
+  margin-bottom: 1.5rem;
+}
+
+.care-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.care-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.care-value {
+  font-weight: 600;
+}
+
+.care-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+/* Care icons styling */
+.water-icon.low { color: #10b981; }
+.water-icon.medium { color: #f59e0b; }
+.water-icon.high { color: #3b82f6; }
+
+.light-icon.low { color: #6b7280; }
+.light-icon.medium { color: #f59e0b; }
+.light-icon.high { color: #f97316; }
+.light-icon.full { color: #dc2626; }
+
+/* Plant actions */
+.plant-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.stock-toggle-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.stock-toggle-btn.in-stock {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.stock-toggle-btn.in-stock:hover {
+  background: #bbf7d0;
+}
+
+.stock-toggle-btn.out-of-stock {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.stock-toggle-btn.out-of-stock:hover {
+  background: #fee2e2;
+}
+
+.delete-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .plant-info {
+    padding: 1rem;
+  }
+  
+  .plant-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .plant-price {
+    align-self: flex-end;
+  }
+  
+  .plant-actions {
+    flex-direction: column;
+  }
+  
+  .stock-toggle-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-image {
+    height: 180px;
+  }
+  
+  .plant-info {
+    padding: 0.75rem;
+  }
+  
+  .plant-name {
+    font-size: 1.125rem;
+  }
+  
+  .plant-price {
+    font-size: 1.25rem;
+  }
+} 

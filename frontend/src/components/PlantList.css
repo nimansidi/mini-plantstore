@@ -1,0 +1,28 @@
+.plant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.plant-list-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .plant-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+} 
